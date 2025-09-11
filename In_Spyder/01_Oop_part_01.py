@@ -1,0 +1,80 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Sep 10 21:03:56 2025
+
+@author: BIMAL
+"""
+
+# 2082/05/25  09:04 PM, PM ko banne vaera tanab vairaxa yr
+
+class Atm:
+    
+    # Magic Methods in Python (__magic_method_name__)
+    
+    # __init__ method is a special method in python class
+    # it is called a constructor and is automatically called when an object of the class is created
+    
+    # Instance Variable are those variable whose value is different for different object
+    def __init__(self):
+        self.pin = ""
+        self.balance =0
+        self.menu()
+        print("Thank you for using ATM")
+        print(id(self))
+    
+    def menu(self):
+        user_input = input('''0
+                           Helloe, How would you like to proceed?
+                           1. Enter 1 to create PIN
+                           2. Enter 2 to deposit 
+                           3. Enter 3 to withdraw
+                           4. Enter 4 to check balance
+                           5. Enter 5 to exit
+                           ''')
+        if user_input=='1':
+            self.create_pin()
+
+        elif user_input=='2':
+            # print("Deposit")
+            self.deposit()
+
+        elif  user_input=='3':
+            self.withdraw()
+
+        elif user_input=='4':
+            self.check_balance()
+
+        else:
+            print("Exit")
+
+    def create_pin(self):
+        self.pin = input("Enter Your PIN")
+        print("Pin Set Successfully")
+    def deposit(self):
+        temp = input("Enter your PIN: ")
+        if temp==self.pin:
+            amount = int(input("Enter the anmount to deposit : "))
+            self.balance+=amount
+            print("Deposit Successfully")
+
+    def withdraw(self):
+        temp = input("Enter your PIN: ")
+        if temp==self.pin:
+            amount = int(input("Enter the anmount to withdraw : "))
+
+            if amount<=self.balance:
+                self.balance -=amount
+                print("Withdrawn Successfully")
+            else:
+                print("Insufficient Balance")
+        else:
+            print("Invalid PIN")
+
+    def check_balance(self):
+        temp = input("Enter your PIN: ")
+        if temp==self.pin:
+            print(f"Your balance is {self.balance}")
+    
+
+
+b = Atm()

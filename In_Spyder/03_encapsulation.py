@@ -14,12 +14,13 @@ class Atm:
     # __init__ method is a special method in python class
     # it is called a constructor and is automatically called when an object of the class is created
     
-    
+    # Instance Variable are those variable whose value is different for different object
     def __init__(self):
-        self.pin = ""
-        self.balance =0
+        self.__pin = ""
+        self.__balance =0
         self.menu()
         print("Thank you for using ATM")
+        print(id(self))
     
     def menu(self):
         user_input = input('''0
@@ -47,22 +48,22 @@ class Atm:
             print("Exit")
 
     def create_pin(self):
-        self.pin = input("Enter Your PIN")
+        self.__pin = input("Enter Your PIN")
         print("Pin Set Successfully")
     def deposit(self):
         temp = input("Enter your PIN: ")
-        if temp==self.pin:
+        if temp==self.__pin:
             amount = int(input("Enter the anmount to deposit : "))
-            self.balance+=amount
+            self.__balance+=amount
             print("Deposit Successfully")
 
     def withdraw(self):
         temp = input("Enter your PIN: ")
-        if temp==self.pin:
+        if temp==self.__pin:
             amount = int(input("Enter the anmount to withdraw : "))
 
             if amount<=self.balance:
-                self.balance -=amount
+                self.__balance -=amount
                 print("Withdrawn Successfully")
             else:
                 print("Insufficient Balance")
@@ -71,8 +72,8 @@ class Atm:
 
     def check_balance(self):
         temp = input("Enter your PIN: ")
-        if temp==self.pin:
-            print(f"Your balance is {self.balance}")
+        if temp==self.__pin:
+            print(f"Your balance is {self.__balance}")
     
 
 
