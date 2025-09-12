@@ -21,10 +21,17 @@ class Atm:
         self.menu()
         print("Thank you for using ATM")
         print(id(self))
-    
+    def get_pin(self):
+        return self.__pin
+    def set_pin(self,new_pin):
+        if type(new_pin) ==str:
+            self.__pin =new_pin
+            print("Pin Changed")
+        else:
+            print("Not allowed")
     def menu(self):
         user_input = input('''0
-                           Helloe, How would you like to proceed?
+                           Hello, How would you like to proceed?
                            1. Enter 1 to create PIN
                            2. Enter 2 to deposit 
                            3. Enter 3 to withdraw
