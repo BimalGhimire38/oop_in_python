@@ -6,11 +6,15 @@ class Atm:
     # it is called a constructor and is automatically called when an object of the class is created
     
     # Instance Variable are those variable whose value is different for different object
+    
+    # static/class variable
+    counter = 1
+    
     def __init__(self):
         self.__pin = ""
         self.__balance =0
-        self.sno = 0
-        self.sno+=1
+        self.sno = Atm.counter
+        Atm.counter += 1
     def get_pin(self):
         return self.__pin
     def set_pin(self,new_pin):
