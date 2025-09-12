@@ -6,22 +6,23 @@ Created on Fri Sep 12 14:59:48 2025
 """
 
 class Customer:
-    def __init__(self,name,gender):
+    def __init__(self,name):
         self.name = name
-        self.gender = gender
         
 def greet(customer):
-    if customer.gender == "Male":
-        print("Hello",customer.name, "Sir")
-        
-    else:
-        print("Hello",customer.name, "Ma'am")
-        
-    cust2 = Customer("BIMALA","Female")
-    return cust2
+    customer.name = "Ghimire"
+    print(customer.name)
+cust = Customer("Bimala")
+#print(id(cust))
+print(cust.name)
+greet(cust)
+print(cust.name)
+# These two variable will point to the same memory location
 
-        
-        
-cust = Customer("Bimal", "Male")
-new_cust = greet(cust)
-print(new_cust.name)
+
+
+
+
+
+
+
