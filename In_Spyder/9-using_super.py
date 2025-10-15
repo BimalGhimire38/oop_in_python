@@ -27,23 +27,42 @@
 
  
 
+# class Parent:
+#     def __init__(self):
+#         self.num = 100
+        
+# class Child(Parent):
+#     def __init__(self):
+#         super().__init__()
+#         self.var = 200
+        
+#     def show(self):
+#         print(self.num)
+#         print(self.var)
+        
+# son = Child()
+# son.show()
+
 class Parent:
     def __init__(self):
-        self.num = 100
+        self.__num = 100
+        
+    def show(self):
+        print("Parent :",self.__num)
         
 class Child(Parent):
     def __init__(self):
         super().__init__()
-        self.var = 200
+        self.__var = 20
         
     def show(self):
-        print(self.num)
-        print(self.var)
+        print("Child ;",self.__var)
         
+dad = Parent()
+dad.show()
 son = Child()
 son.show()
-
-        
+       
         
         
         
