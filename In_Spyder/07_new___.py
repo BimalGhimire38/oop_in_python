@@ -22,6 +22,7 @@ class SmartPhone(Phone):
 
 s = SmartPhone(40000, "Samsung", "64 MP")
 s.buy()
+print(s.brand)
 
 # Method Overriding --> Polymorphism
 # Method Overloading
