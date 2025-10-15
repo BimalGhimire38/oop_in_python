@@ -1,28 +1,17 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Sep 21 20:56:30 2025
-
-@author: BIMAL
-"""
-
-# 2082/06/29  10:41 AM, @ Home, Bidhyapur
-
-class Parent:
-    def __init__(self, num):
-        self.__num = num
+class Phone:
+    def __init(self,price,brand,camera):
+        print("Inside Phone constructor")
+        self.__price = price 
+        self.brand = brand
+        self.camera = camera
         
-    def get_num(self):
-        return self.__num
-    
-class Child(Parent):
-    def __init__(self,val,num):
-        self.__val=val
-    def get_val(self):
-        return self.__val
+    def buy(self):
+        print("Buying a Phone")
         
-son = Child(100,200)
-print("Parent Num",son.get_num())
-print("Child val",son.get_val())
-
-
-
+class SmartPhone(Phone):
+    def buy(self):
+        print("Buying a smartphone")
+        super().buy()
+        
+s = SmartPhone(20000,"Samsung","48 MP")
+s.buy()
